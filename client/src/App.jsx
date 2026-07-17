@@ -3,6 +3,9 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import UploadResume from './pages/UploadResume';
+import InterviewPage from './pages/InterviewPage';
+import ResultsPage from './pages/ResultsPage';
 import './App.css'
 
 // Protects routes that require login
@@ -16,6 +19,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="*" element={<Navigate to="/login" />} />
       <Route
         path="/dashboard"
         element={
@@ -24,7 +28,31 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route path="*" element={<Navigate to="/login" />} />
+      <Route
+        path="/upload"
+        element={
+          <ProtectedRoute>
+            <UploadResume />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/interview/:sessionId"
+        element={
+          <ProtectedRoute>
+            <InterviewPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/results/:sessionId"
+        element={
+          <ProtectedRoute>
+            <ResultsPage />
+          </ProtectedRoute>
+        }
+      />
+
     </Routes>
   );
 }
