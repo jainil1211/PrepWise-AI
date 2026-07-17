@@ -80,10 +80,10 @@ cd client && npm run dev
 - [x] Project architecture & folder structure
 - [x] JWT authentication (signup/login)
 - [x] Auth UI (Login/Signup pages)
-- [ ] Resume + job description upload
-- [ ] AI-powered question generation
-- [ ] Interview answer evaluation
-- [ ] Results dashboard
+- [x] Resume + job description upload
+- [x] AI-powered question generation
+- [x] Interview answer evaluation
+- [x] Results dashboard
 - [ ] Deployment
 
 ---
